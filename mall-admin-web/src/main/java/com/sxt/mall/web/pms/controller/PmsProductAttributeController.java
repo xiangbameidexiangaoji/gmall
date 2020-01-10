@@ -3,6 +3,7 @@ package com.sxt.mall.web.pms.controller;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.sxt.mall.pms.service.ProductAttributeService;
 import com.sxt.mall.to.CommonResult;
+import com.sxt.mall.vo.PageInfoVo;
 import com.sxt.mall.vo.product.PmsProductAttributeParam;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -17,6 +18,7 @@ import java.util.List;
  * 商品属性管理Controller
  */
 @RestController
+@CrossOrigin
 @Api(tags = "PmsProductAttributeController", description = "商品属性管理")
 @RequestMapping("/productAttribute")
 public class PmsProductAttributeController {
@@ -31,7 +33,8 @@ public class PmsProductAttributeController {
                           @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize,
                           @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum) {
         //TODO 根据分类查询属性列表或参数列表
-        return new CommonResult().success(null);
+        PageInfoVo pageInfoVo = this.productAttributeService.getCategoryAttributes(cid,type,pageSize,pageNum);
+        return new CommonResult().success(pageInfoVo);
     }
 
     @ApiOperation("添加商品属性信息")
