@@ -7,6 +7,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
 
@@ -16,6 +17,9 @@ public class MallPmsApplicationTests {
 
     @Autowired
     private ProductService productService;
+
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     @Autowired
     private BrandService brandService;
@@ -29,6 +33,14 @@ public class MallPmsApplicationTests {
 //        System.out.println("保存成功");
         Brand byId = this.brandService.getById(53);
         System.out.println(byId.getName());
+    }
+
+    @Test
+    public void redisTemp(){
+        this.redisTemplate.opsForValue().set("key", "hello");
+        System.out.println("============");
+        Object key = this.redisTemplate.opsForValue().get("key");
+        System.out.println("key====="+key);
     }
 
 }

@@ -11,15 +11,11 @@
     <modules>
         <module>mall-common</module>
         <module>mall-api</module>
+        <module>mall-pms</module>
+        <module>mall-mbg</module>
+        <module>mall-oms</module>
+        <module>mall-sms</module>
+        <module>mall-ums</module>
+        <module>mall-admin-web</module>
     </modules>
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <optional>true</optional>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
 </project>

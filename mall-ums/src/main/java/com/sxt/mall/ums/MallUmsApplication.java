@@ -12,6 +12,6 @@ public class MallUmsApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(MallUmsApplication.class, args);
-    }
+}
 
 }

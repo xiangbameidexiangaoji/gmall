@@ -2,6 +2,7 @@ package com.sxt.mall.pms.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.sxt.mall.pms.entity.ProductLadder;
+import org.springframework.stereotype.Repository;
 
 /**
  * <p>
@@ -11,6 +12,7 @@ import com.sxt.mall.pms.entity.ProductLadder;
  * @author 
  * @since 2019-12-06
  */
+@Repository
 public interface ProductLadderMapper extends BaseMapper<ProductLadder> {
 
 }
