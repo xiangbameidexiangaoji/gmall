@@ -17,15 +17,15 @@ import java.util.List;
 public class GlobalException {
 
     @ExceptionHandler(value = BindException.class)
-    public Object handleBindException(BindException ex){
+    public Object handleBindException(BindException ex) {
         List<FieldError> fieldErrors = ex.getFieldErrors();
-        log.error("[系统全局异常感知,信息:{}]",fieldErrors);
+        log.error("[系统全局异常感知,信息:{}]", fieldErrors);
         return new CommonResult().failed();
     }
-    
+
     @ExceptionHandler(value = Exception.class)
-    public Object handException(Exception e){
-        log.error("[系统全局异常感知,信息:{}]",e.getStackTrace());
+    public Object handException(Exception e) {
+        log.error("[系统全局异常感知,信息:{}]", e.getStackTrace());
         return new CommonResult().failed();
     }
 

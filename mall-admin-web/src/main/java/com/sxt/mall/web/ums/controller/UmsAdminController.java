@@ -51,15 +51,15 @@ public class UmsAdminController {
         int errorCount = result.getErrorCount();
         if (errorCount > 0) {
             List<FieldError> fieldErrors = result.getFieldErrors();//获取所有错误字段
-            fieldErrors.forEach((e) ->{
+            fieldErrors.forEach((e) -> {
                 String fieldName = e.getField();    //校验不合法的名字
                 log.debug("属性:{},值:{},提示信息:{}",
-                fieldName,e.getRejectedValue(),e.getDefaultMessage());
+                        fieldName, e.getRejectedValue(), e.getDefaultMessage());
             });
-        }else{
+        } else {
 
         }
-        log.debug("需要注册的用户详情:{},效验错误次数:{}",umsAdminParam,errorCount);
+        log.debug("需要注册的用户详情:{},效验错误次数:{}", umsAdminParam, errorCount);
         return new CommonResult().success(admin);
     }
 

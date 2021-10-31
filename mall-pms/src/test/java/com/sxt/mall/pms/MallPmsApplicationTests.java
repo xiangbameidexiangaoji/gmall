@@ -10,6 +10,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.ArrayList;
+
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -41,6 +43,7 @@ public class MallPmsApplicationTests {
         System.out.println("============");
         Object key = this.redisTemplate.opsForValue().get("key");
         System.out.println("key====="+key);
+        ArrayList arrayList = new ArrayList();
     }
 
 }

@@ -12,5 +12,11 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2019-05-08
  */
 public interface MemberService extends IService<Member> {
-
+    /**
+     * 登录
+     * @param username
+     * @param password
+     * @return
+     */
+    Member login(String username, String password);
 }

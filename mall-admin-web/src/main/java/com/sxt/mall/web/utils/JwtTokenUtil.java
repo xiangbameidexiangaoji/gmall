@@ -15,13 +15,13 @@ import java.util.Map;
 
 /**
  * JwtToken生成的工具类
- *
+ * <p>
  * JWT token的格式：header.payload.signature
- *
+ * <p>
  * header的格式（算法、token的类型）：
  * {"alg": "HS512","typ": "JWT"}
  * payload的格式（用户名、创建时间、生成时间）：
- *      {"id":1,"sub":"wang","created":1489079981393,"exp":1489684781}
+ * {"id":1,"sub":"wang","created":1489079981393,"exp":1489684781}
  */
 @Component
 public class JwtTokenUtil {
@@ -56,7 +56,7 @@ public class JwtTokenUtil {
                     .parseClaimsJws(token)
                     .getBody();
         } catch (Exception e) {
-            LOGGER.info("JWT格式验证失败:{}",token);
+            LOGGER.info("JWT格式验证失败:{}", token);
         }
         return claims;
     }
@@ -75,7 +75,7 @@ public class JwtTokenUtil {
         String username;
         try {
             Claims claims = getClaimsFromToken(token);
-            username =  claims.getSubject();
+            username = claims.getSubject();
         } catch (Exception e) {
             username = null;
         }
@@ -85,7 +85,7 @@ public class JwtTokenUtil {
     /**
      * 验证token是否还有效
      *
-     * @param token       客户端传入的token
+     * @param token 客户端传入的token
      * @param admin 从数据库中查询出来的用户信息
      */
     public boolean validateToken(String token, Admin admin) {

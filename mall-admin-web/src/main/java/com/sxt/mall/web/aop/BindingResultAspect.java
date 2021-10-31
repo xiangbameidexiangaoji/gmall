@@ -15,16 +15,17 @@ import org.springframework.validation.BindingResult;
 public class BindingResultAspect {
 
     @Pointcut("execution(* com.sxt.mall.web..*Controller.*(..))")
-    public void BindingResult(){};
+    public void BindingResult() {
+    }
 
     @Around("BindingResult()")
     public Object doAround(ProceedingJoinPoint joinPoint) throws Throwable {
-
-        Object[] args = joinPoint.getArgs();//获取所有参数到数组中
-        for(Object obj : args){
-            if(obj instanceof BindingResult){
+        //获取所有参数到数组中
+        Object[] args = joinPoint.getArgs();
+        for (Object obj : args) {
+            if (obj instanceof BindingResult) {
                 BindingResult bindingResult = (BindingResult) obj;
-                if(bindingResult.getErrorCount() > 0){
+                if (bindingResult.getErrorCount() > 0) {
                     return new CommonResult().validateFailed(bindingResult);
                 }
             }

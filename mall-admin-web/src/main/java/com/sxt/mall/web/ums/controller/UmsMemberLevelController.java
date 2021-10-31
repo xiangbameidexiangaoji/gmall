@@ -19,11 +19,12 @@ public class UmsMemberLevelController {
 
     /**
      * 查询会员等级
+     *
      * @return
      */
     @GetMapping("/list")
     @ApiOperation("查询所有会员等级")
-    public CommonResult memberLevelList(@RequestParam(value = "defaultStatus") Integer defaultStatus){
+    public CommonResult memberLevelList(@RequestParam(value = "defaultStatus") Integer defaultStatus) {
         List<MemberLevel> list = this.memberLevelService.list();
         return new CommonResult().success(list);
     }

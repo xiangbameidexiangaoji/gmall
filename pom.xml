@@ -17,5 +17,7 @@
         <module>mall-sms</module>
         <module>mall-ums</module>
         <module>mall-admin-web</module>
+        <module>mall-search</module>
+        <module>mall-shop-portal</module>
     </modules>
 </project>

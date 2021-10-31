@@ -43,7 +43,7 @@ public class OssComponent {
         OssPolicyResult result = new OssPolicyResult();
         // 存储目录
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
-        String dir = ALIYUN_OSS_DIR_PREFIX+sdf.format(new Date());
+        String dir = ALIYUN_OSS_DIR_PREFIX + sdf.format(new Date());
         // 签名有效期
         long expireEndTime = System.currentTimeMillis() + ALIYUN_OSS_EXPIRE * 1000;
         Date expiration = new Date(expireEndTime);
@@ -72,7 +72,7 @@ public class OssComponent {
     }
 
     @Bean
-    public OSSClient ossClient(){
+    public OSSClient ossClient() {
         OSSClient ossClient = new OSSClient(ALIYUN_OSS_ENDPOINT, ALIYUN_OSS_SECRET_KEY);
         return ossClient;
     }

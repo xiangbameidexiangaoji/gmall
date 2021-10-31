@@ -55,7 +55,7 @@ public class PmsProductAttributeCategoryController {
     public Object getList(@RequestParam(defaultValue = "5") Integer pageSize,
                           @RequestParam(defaultValue = "1") Integer pageNum) {
         //TODO 分页获取所有商品属性分类
-        PageInfoVo pageInfoVo = this.productAttributeCategoryService.pageInfo(pageSize,pageNum);
+        PageInfoVo pageInfoVo = this.productAttributeCategoryService.pageInfo(pageSize, pageNum);
         return new CommonResult().success(pageInfoVo);
     }
 

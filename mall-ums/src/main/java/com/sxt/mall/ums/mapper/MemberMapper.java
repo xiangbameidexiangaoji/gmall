@@ -2,6 +2,7 @@ package com.sxt.mall.ums.mapper;
 
 import com.sxt.mall.ums.entity.Member;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.springframework.stereotype.Repository;
 
 /**
  * <p>
@@ -11,6 +12,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author 
  * @since 2019-12-06
  */
+@Repository
 public interface MemberMapper extends BaseMapper<Member> {
 
 }

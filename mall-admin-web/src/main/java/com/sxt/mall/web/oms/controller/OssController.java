@@ -18,19 +18,19 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @CrossOrigin
 @Controller
-@Api(tags = "OssController",description = "Oss管理")
+@Api(tags = "OssController", description = "Oss管理")
 @RequestMapping("/aliyun/oss")
 public class OssController {
 
-	@Autowired
-	private OssComponent ossComponent;
+    @Autowired
+    private OssComponent ossComponent;
 
-	@ApiOperation(value = "oss上传签名生成")
-	@GetMapping(value = "/policy")
-	@ResponseBody
-	public Object policy() {
-		OssPolicyResult policy = ossComponent.policy();
-		return new CommonResult().success(policy);
-	}
+    @ApiOperation(value = "oss上传签名生成")
+    @GetMapping(value = "/policy")
+    @ResponseBody
+    public Object policy() {
+        OssPolicyResult policy = ossComponent.policy();
+        return new CommonResult().success(policy);
+    }
 
 }
